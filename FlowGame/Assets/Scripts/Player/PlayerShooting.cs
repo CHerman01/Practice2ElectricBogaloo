@@ -46,14 +46,6 @@ public class PlayerShooting : MonoBehaviour
             // ... disable the effects.
             DisableEffects();
         }
-
-
-        if(ScoreManager.score >= 5)
-        {
-            timeBetweenBullets = .001f;
-        }
-
-
     }
 
     public void DisableEffects()
@@ -89,8 +81,6 @@ public class PlayerShooting : MonoBehaviour
         // Perform the raycast against gameobjects on the shootable layer and if it hits something...
         if (Physics.Raycast(shootRay, out shootHit, range, shootableMask))
         {
-            gunLine.SetPosition(1, shootHit.point);
-            Debug.Log(transform.position);
             // Try and find an EnemyHealth script on the gameobject hit.
             EnemyHealth enemyHealth = shootHit.collider.GetComponent<EnemyHealth>();
 
