@@ -34,7 +34,7 @@ public class PlayerShooting : MonoBehaviour
         timer += Time.deltaTime;
 
         // If the Fire1 button is being press and it's time to fire...
-        if (Input.GetButton("Fire1") && timer >= timeBetweenBullets)
+        if (Input.GetButton("Fire1") || (Input.GetButton("XboxFire"))&& timer >= timeBetweenBullets)
         {
             // ... shoot the gun.
             Shoot();
@@ -50,7 +50,7 @@ public class PlayerShooting : MonoBehaviour
 
         if(ScoreManager.score >= 5)
         {
-            timeBetweenBullets = .001f;
+            timeBetweenBullets = 2f;
         }
 
 
@@ -90,7 +90,7 @@ public class PlayerShooting : MonoBehaviour
         if (Physics.Raycast(shootRay, out shootHit, range, shootableMask))
         {
             gunLine.SetPosition(1, shootHit.point);
-            Debug.Log(transform.position);
+            //Debug.Log(transform.position);
             // Try and find an EnemyHealth script on the gameobject hit.
             EnemyHealth enemyHealth = shootHit.collider.GetComponent<EnemyHealth>();
 

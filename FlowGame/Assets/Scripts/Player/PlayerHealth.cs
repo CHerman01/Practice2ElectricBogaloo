@@ -9,7 +9,11 @@ public class PlayerHealth : MonoBehaviour
     public int currentHealth;                                   // The current health the player has.
     public Slider healthSlider;                                 // Reference to the UI's health bar.
     public Image damageImage;                                   // Reference to an image to flash on the screen on being hurt.
+    public Image healthImage;                                   // Reference to an image to flash on the screen on being healed.
+
     public AudioClip deathClip;                                 // The audio clip to play when the player dies.
+    public AudioClip hurt;
+
     public float flashSpeed = 5f;                               // The speed the damageImage will fade at.
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     // The colour the damageImage is set to, to flash.
 
@@ -37,11 +41,11 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.tag == "Health")
         {
            currentHealth += 20;
-           healthSlider.value = currentHealth;
+            healthSlider.value = currentHealth;
+
            Destroy(collision.gameObject);
         }
     }
-
 
 
     void Update()
@@ -78,6 +82,15 @@ public class PlayerHealth : MonoBehaviour
         // Play the hurt sound effect.
         playerAudio.Play();
 
+
+        IEnumerator Die()
+        {
+            yield return new WaitForSeconds(2);
+            SceneManager.LoadScene("Menu");
+        }
+
+
+
         void Death()
         {
             // Set the death flag so this function won't be called again.
@@ -97,7 +110,8 @@ public class PlayerHealth : MonoBehaviour
             playerMovement.enabled = false;
             playerShooting.enabled = false;
 
-            SceneManager.LoadScene("Menu");
+            StartCoroutine(Die());
+
         }
 
 

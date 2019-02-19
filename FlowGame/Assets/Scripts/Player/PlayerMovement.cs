@@ -23,8 +23,6 @@ public class PlayerMovement : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody>();
     }
 
-
-
     void FixedUpdate()
     {
         // Store the input axes.
@@ -38,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
         Turning();
 
         // Animate the player.
-        Animating(h, v);
+      //  Animating(h, v);
     }
 
     void Move(float h, float v)
@@ -53,8 +51,14 @@ public class PlayerMovement : MonoBehaviour
         playerRigidbody.MovePosition(transform.position + movement);
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        movement.Set(0f, 0f, 0f);
+    }
+
     void Turning()
     {
+
         // Create a ray from the mouse cursor on screen in the direction of the camera.
         Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         // Create a RaycastHit variable to store information about what was hit by the ray.

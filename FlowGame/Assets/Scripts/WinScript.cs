@@ -9,7 +9,7 @@ public class WinScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(ScoreManager.score >= 80)
+        if(ScoreManager.score >= 10000)
         {
             SceneManager.LoadScene("Win");
         }

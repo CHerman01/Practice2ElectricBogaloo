@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 311105251878845380}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.09, z: 0}
+  m_LocalPosition: {x: 0, y: 0.001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 311105252013511320}
@@ -222,7 +222,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.9094448, b: 0, a: 1}
+      maxColor: {r: 1, g: 0.880132, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4785,7 +4785,7 @@ GameObject:
   - component: {fileID: 311105252013511323}
   - component: {fileID: 311105252013511313}
   m_Layer: 9
-  m_Name: Enemy
+  m_Name: Enemy2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4799,8 +4799,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 311105252013511324}
   m_LocalRotation: {x: 0, y: 1, z: -0, w: -0.0000001872535}
-  m_LocalPosition: {x: -4.3, y: 4.91, z: 33.6}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: -4.3, y: 6.77, z: 33.667}
+  m_LocalScale: {x: 6.66, y: 19.86, z: 7.0393}
   m_Children:
   - {fileID: 311105251878845383}
   m_Father: {fileID: 0}
@@ -4903,7 +4903,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.5
-  m_Speed: 80
+  m_Speed: 120
   m_Acceleration: 60
   avoidancePriority: 50
   m_AngularSpeed: 110
@@ -4927,7 +4927,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.178
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5023,7 +5023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e15585e71bf22244a1eabd14be7ce79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
+  startingHealth: 50
   currentHealth: 0
   sinkSpeed: 5
   scoreValue: 1

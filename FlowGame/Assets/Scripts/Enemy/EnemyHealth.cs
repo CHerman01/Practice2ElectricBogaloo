@@ -88,18 +88,16 @@ void Death()
 
 public void StartSinking()
 {
-        if(gameObject.tag == "Enemy")
+        if(this.gameObject.tag == "Enemy")
         {
             // Find and disable the Nav Mesh Agent.
             GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         }
 
-        if (gameObject.tag == "Objective")
+        if (this.gameObject.tag == "Objective")
         {
             enemyAudio.clip = objectiveExplosion;
             enemyAudio.Play();
-            enemyAudio.clip = deathClip;
-            //   Objectives.Remove(targetObject);
         }
 
 
